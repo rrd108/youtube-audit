@@ -21,13 +21,7 @@ def main():
             print(stats['statistics'])
 
             # get last 10 video ids
-            # TODO we request here 15 videos, but we should get the last 10 or the last month - what is bigger - if last month had more than 10 vieos the statistics will be wrong
-            r = requests.get(f'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId={channelId}&maxResults=15&key={apiKey}&type=video')
-            if (r.status_code != 200):
-                print('error: ' + str(r.status_code))
-                exit()
-
-            videos = r.json()
+            videos = yt.getLast10Videos(channelId, apiKey)
             #print(json.dumps(videos, indent=2, sort_keys=True))
 
             # get video statistics
