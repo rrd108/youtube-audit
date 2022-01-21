@@ -22,8 +22,7 @@ class Youtube:
         channelId = re.search('"browseId":"([^"]*)"', r.text).groups()[0]
         return channelId
 
-    def getMainStats(self, channelId, apiKey):
-        # get channel main statistics
+    def getChannelStats(self, channelId, apiKey):
         r = requests.get('https://youtube.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=' + channelId + '&key=' + apiKey)
         stats = r.json()
         return {

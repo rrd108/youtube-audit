@@ -16,7 +16,7 @@ def main():
             channelId = yt.getChannelId()
             print(channelId)
 
-            stats = yt.getMainStats(channelId, apiKey)
+            stats = yt.getChannelStats(channelId, apiKey)
             print(stats['channelTitle'])
             print(stats['statistics'])
 
