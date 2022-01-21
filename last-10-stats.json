@@ -1,0 +1,182 @@
+{
+  "etag": "IcAy9Ud8bMyeEIKtmSWUUeZVALs",
+  "items": [
+    {
+      "etag": "JbP-OWcuREg4zHWbwVcFgUJgjwI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jPRs8m_Xpso"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCUZrc370uR0GZBGLSTqWG7A",
+        "channelTitle": "Bhaktip\u0101da Gosv\u0101m\u012b",
+        "description": "Beszelgetes Bhaktip\u0101da Gosv\u0101m\u012bval. A ma huszoneveseinek mi is a perspektiva? Folyamatos \u00e9s gyors a v\u00e1ltoz\u00e1s a vil\u00e1gban, ...",
+        "liveBroadcastContent": "upcoming",
+        "publishTime": "2022-01-19T20:37:28Z",
+        "publishedAt": "2022-01-19T20:37:28Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/jPRs8m_Xpso/default_live.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/jPRs8m_Xpso/hqdefault_live.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/jPRs8m_Xpso/mqdefault_live.jpg",
+            "width": 320
+          }
+        },
+        "title": "Mit tegyunk?"
+      }
+    },
+    {
+      "etag": "TL0nshjYq4cIfErCbMZSdds7r3U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-6nMlb4_ZJg"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCUZrc370uR0GZBGLSTqWG7A",
+        "channelTitle": "Bhaktip\u0101da Gosv\u0101m\u012b",
+        "description": "Bhaktip\u0101da Gosv\u0101m\u012b Facebook: https://www.facebook.com/bhaktipada.dasa Facebook oldal: ...",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-19T11:27:18Z",
+        "publishedAt": "2022-01-19T11:27:18Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/-6nMlb4_ZJg/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/-6nMlb4_ZJg/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/-6nMlb4_ZJg/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "K\u00e9sz\u00fcl\u0151d\u00e9sek a 2022 \u00e9vre. Bhaktip\u0101da Gosv\u0101m\u012b"
+      }
+    },
+    {
+      "etag": "qa05HMtjUqZR19XEV3B5HTmIWk0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1FP_ScMHvRU"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCUZrc370uR0GZBGLSTqWG7A",
+        "channelTitle": "Bhaktip\u0101da Gosv\u0101m\u012b",
+        "description": "Aki a teljes odaad\u00f3 szolg\u00e1latba mer\u00fcl, s nem esik vissza semmilyen k\u00f6r\u00fclm\u00e9nyek k\u00f6z\u00f6tt, az egyszeriben t\u00fall\u00e9p az anyagi ...",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-01-16T11:23:49Z",
+        "publishedAt": "2022-01-16T11:23:49Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/1FP_ScMHvRU/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/1FP_ScMHvRU/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/1FP_ScMHvRU/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "B.G. 14. 4.r\u00e9sz. Legyen \u0151szinte a motiv\u00e1ci\u00f3t. Bhaktip\u0101da Gosv\u0101m\u012b"
+      }
+    },
+    {
+      "etag": "GYh52BqHwf9ETc42GJq3ssRUEh0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jW2JtFULgos"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCUZrc370uR0GZBGLSTqWG7A",
+        "channelTitle": "Bhaktip\u0101da Gosv\u0101m\u012b",
+        "description": "Bhaktip\u0101da Gosv\u0101m\u012b Facebook: https://www.facebook.com/bhaktipada.dasa Facebook oldal: ...",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-31T00:00:12Z",
+        "publishedAt": "2021-12-31T00:00:12Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/jW2JtFULgos/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/jW2JtFULgos/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/jW2JtFULgos/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "Minden kedves bar\u00e1tomnak Boldog \u00daj \u00c9vet k\u00edv\u00e1nok. Bhaktip\u0101da Gosv\u0101m\u012b"
+      }
+    },
+    {
+      "etag": "JUPa621fZEXCuegVDK8UHQGv-vM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lD-QZAkcBoo"
+      },
+      "kind": "youtube#searchResult",
+      "snippet": {
+        "channelId": "UCUZrc370uR0GZBGLSTqWG7A",
+        "channelTitle": "Bhaktip\u0101da Gosv\u0101m\u012b",
+        "description": "Kedves bar\u00e1taim. Holnap dec 23 ism\u00e9t Sz\u00e9ll K\u00e1lm\u00e1n t\u00e9ren kint leszek. Bhaktip\u0101da Gosv\u0101m\u012b.",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-22T20:00:01Z",
+        "publishedAt": "2021-12-22T20:00:01Z",
+        "thumbnails": {
+          "default": {
+            "height": 90,
+            "url": "https://i.ytimg.com/vi/lD-QZAkcBoo/default.jpg",
+            "width": 120
+          },
+          "high": {
+            "height": 360,
+            "url": "https://i.ytimg.com/vi/lD-QZAkcBoo/hqdefault.jpg",
+            "width": 480
+          },
+          "medium": {
+            "height": 180,
+            "url": "https://i.ytimg.com/vi/lD-QZAkcBoo/mqdefault.jpg",
+            "width": 320
+          }
+        },
+        "title": "Kedves bar\u00e1taim. Holnap dec 23 ism\u00e9t Sz\u00e9ll K\u00e1lm\u00e1n t\u00e9ren kint leszek. Bhaktip\u0101da Gosv\u0101m\u012b"
+      }
+    }
+  ],
+  "kind": "youtube#searchListResponse",
+  "nextPageToken": "CAUQAA",
+  "pageInfo": {
+    "resultsPerPage": 5,
+    "totalResults": 1897
+  },
+  "regionCode": "HU"
+}
