@@ -1,9 +1,9 @@
 from datetime import date, datetime
 import requests
-
 import youtube
+import secrets
 
-apiKey = 'AIzaSyBI_T8eLqhIyTjH8EmGMS1olAsJZGAVX4c'
+apiKey = secrets.apiKey
 
 def main():
     with open('competitiors.txt') as f:
@@ -20,9 +20,7 @@ def main():
             print(stats['channelTitle'])
             print(stats['statistics'])
 
-            # get last 10 video ids
             videos = yt.getLast10Videos(channelId, apiKey)
-            #print(json.dumps(videos, indent=2, sort_keys=True))
 
             # get video statistics
             videoStats = []
