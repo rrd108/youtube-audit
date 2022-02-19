@@ -1,15 +1,19 @@
+import csv
 from datetime import date, datetime
 import os
 import requests
 import youtube
 import secrets
+import sys
 
 apiKey = secrets.apiKey
 
 def main():
+    competitiorsFile = sys.argv[1] if len(sys.argv) == 2 else 'competitiors.txt'
+
     filePath = os.path.abspath(os.path.dirname(__file__)) + '/'
 
-    with open(filePath + 'competitiors.txt') as f:
+    with open(filePath + competitiorsFile) as f:
         urls = f.readlines()
 
         analytics = []
@@ -25,12 +29,6 @@ def main():
             print()
             print(stats['channelTitle'])
             print(stats['statistics'])
-            
-            analytics.append({
-                'channel' : stats['channelTitle'],
-                'viewCount': stats['statistics']['viewCount'],
-                'subscriberCount': stats['statistics']['subscriberCount'],
-            })
 
             videos = yt.getLast10Videos(channelId, apiKey)
 
@@ -48,20 +46,17 @@ def main():
                         #exit()
 
                     if (r.status_code == 200):
-                        stats = r.json()
+                        vStats = r.json()
 
                         videoDate = datetime.strptime(video['snippet']['publishedAt'],'%Y-%m-%dT%H:%M:%SZ')
 
                         videoStats.append({
-                            'title': stats['items'][0]['snippet']['title'],
+                            'title': vStats['items'][0]['snippet']['title'],
                             'publishedAt': video['snippet']['publishedAt'],
                             'age' : str((currentDate - videoDate.date()).days),
-                            'viewCount': stats['items'][0]['statistics']['viewCount'],
-                            'likeCount': stats['items'][0]['statistics']['likeCount'],
+                            'viewCount': vStats['items'][0]['statistics']['viewCount'],
+                            'likeCount': vStats['items'][0]['statistics']['likeCount'],
                         })
-            #print(json.dumps(videoStats, indent=2, sort_keys=True))
-            #last10Views = str(sum(int(video['viewCount']) for video in videoStats[:10]))
-            #last10Likes = str(sum(int(video['likeCount']) for video in videoStats[:10]))
             ageOf10thVideo = str(videoStats[9]['age'])
             
             last28DaysViews = str(sum(int(video['viewCount']) for video in videoStats if int(video['age']) <= 28))
@@ -78,15 +73,14 @@ def main():
             print(f'Total likes of last 28 days: {last28DaysLikes}')
             print()
             
-            # TODO 5 most popular video views, likes and age
-            r = requests.get(f'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={channelId}&key={apiKey}&maxResults=5&order=viewCount&type=video')
+            # most popular video views, likes and age
+            r = requests.get(f'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId={channelId}&key={apiKey}&maxResults=1&order=viewCount&type=video')
             # quota 100
             if (r.status_code != 200):
                 print('error: ' + str(r.status_code))
                 exit()
 
             videos = r.json()
-            besties = []
             for video in videos['items']:
                 # quota 1
                 r = requests.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=' + video['id']['videoId'] + '&key=' + apiKey)
@@ -94,24 +88,49 @@ def main():
                     print('error: ' + str(r.status_code))
                     exit()
 
-                stats = r.json()
+                vStats = r.json()
                 videoDate = datetime.strptime(video['snippet']['publishedAt'],'%Y-%m-%dT%H:%M:%SZ')
                 likeCount = -1
-                if 'likeCount' in stats['items'][0]['statistics']: 
-                    likeCount = stats['items'][0]['statistics']['likeCount']
-                besties.append({
-                    'title': stats['items'][0]['snippet']['title'],
+                if 'likeCount' in vStats['items'][0]['statistics']: 
+                    likeCount = vStats['items'][0]['statistics']['likeCount']
+                best= {
+                    'title': vStats['items'][0]['snippet']['title'],
                     'publishedAt': video['snippet']['publishedAt'],
                     'age' : str((currentDate - videoDate.date()).days),
-                    'viewCount': stats['items'][0]['statistics']['viewCount'],
+                    'viewCount': vStats['items'][0]['statistics']['viewCount'],
                     'likeCount': likeCount,
-                })
+                }
 
-            print(f"Total views of best video: {str(besties[0]['viewCount'])}")
-            print(f"Total likes of best video: {str(besties[0]['likeCount'])}")
-            print(f"Age of best video: {str(besties[0]['age'])}")
+            print(f"Total views of best video: {str(best['viewCount'])}")
+            print(f"Total likes of best video: {str(best['likeCount'])}")
+            print(f"Age of best video: {str(best['age'])}")
 
-        #print(analytics)        
+            analytics.append({
+                'channel' : stats['channelTitle'],
+                'viewCount': stats['statistics']['viewCount'],
+                'subscriberCount': stats['statistics']['subscriberCount'],
+                'videoCount': stats['statistics']['videoCount'],
+                'ageOf10thVideo': ageOf10thVideo,
+                'last28DaysNumberOfVideos': last28DaysNumberOfVideos,
+                'last28DaysViews': last28DaysViews,
+                'last28DaysLikes': last28DaysLikes,
+                'bestNumberOfVideos': best['age'],
+                'bestViews': best['viewCount'],
+                'bestLikes': best['likeCount'],
+
+            })
+
+        print(analytics)    
+
+        keys = analytics[0].keys() 
+        outputFile = open('acidTest.csv', 'w')
+        dict_writer = csv.DictWriter(outputFile, keys)
+        dict_writer.writeheader()
+        dict_writer.writerows(analytics)
+        outputFile.close()
+            
+        print()
+        print('acidTest.csv is updated')
 
 if __name__ == "__main__":
     main()
