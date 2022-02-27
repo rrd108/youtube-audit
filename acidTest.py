@@ -120,7 +120,7 @@ def main():
 
             })
 
-        print(analytics)    
+        # print(analytics)    
 
         keys = analytics[0].keys() 
         outputFile = open('acidTest.csv', 'w')

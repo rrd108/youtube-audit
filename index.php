@@ -1,11 +1,11 @@
 <?php
-function generateData($type, $exclude)
+function generateData($type, $show)
 {
     $youtubers = [];
     $fileName = $type == 'subs' ? 'Subscribers' : 'Views';
     if (($handle = fopen('./analytics' . $fileName . '.csv', 'r')) !== false) {
         while (($data = fgetcsv($handle, 1000, ',')) !== false) {
-            if (in_array($data[0], $exclude)) {
+            if (!in_array($data[0], $show)) {
                 continue;
             }
             foreach ($data as $i => $d) {
@@ -24,13 +24,21 @@ function generateData($type, $exclude)
     return $youtubers;
 }
 
-
 $exclude = [];
-$youtubersSubs = generateData('subs', $exclude);
-$youtubersViews = generateData('views', $exclude);
-
-
-
+if ($_GET['channel'] == 'bpdg') {
+    $show = [
+        'Bhaktipāda Gosvāmī',
+        'Hinduizmus | Leveles Zoltán spritiuális tanításai',
+        'Cser Zoltán',
+        'Chong An Sunim',
+        'Papifrankó',
+        'Misevlog Fábry Kornéllal',
+        'Nitai-bhavana d',
+        'Caitanya d'
+    ];
+}
+$youtubersSubs = generateData('subs', $show);
+$youtubersViews = generateData('views', $show);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +47,7 @@ $youtubersViews = generateData('views', $exclude);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prédikátorok</title>
+    <title>Versenytársak</title>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js" defer></script>
     <script>
         const defaults = {
@@ -104,6 +112,14 @@ $youtubersViews = generateData('views', $exclude);
 </head>
 
 <body>
+    <header>
+        <form method="get">
+            <select name="channel">
+                <option value="bpdg">Bhaktipada Dasa Goswami</option>
+            </select>
+            <input type="submit" value="Generate report">
+        </form>
+    </header>
     <div id="chartContainerViews" style="height: 670px; width: 100%;"></div>
     <div id="chartContainerSubs" style="height: 670px; width: 100%;"></div>
 </body>
